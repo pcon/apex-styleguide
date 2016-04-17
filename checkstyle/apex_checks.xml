@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+          "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+          "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+	<property name="basedir" value="${basedir}"/>
+    <property name="fileExtensions" value="cls, trigger"/>
+
+	<!-- General formatting -->
+	<module name="RegexpSingleline">
+		<property name="format" value=",[^'\s]" />
+		<property name="message" value="There should be a space after a comma" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="[\s]," />
+		<property name="message" value="There should be no space before a comma" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="[^\+!=&gt;&lt; ]=" />
+		<property name="message" value="There should be a spaces surrounding equal signs" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="[^\+]\+[^\s$]" />
+		<property name="message" value="There should be a spaces surrounding plus signs" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="for \(.*\S:" />
+		<property name="message" value="There should be a spaces surrounding colons" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="for \(.*:\S" />
+		<property name="message" value="There should be a spaces surrounding colons" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="\[\d*\]" />
+		<property name="message" value="Array notation should not be used" />
+	</module>
+
+    <module name="RegexpSingleline">
+       <property name="format" value="\s+$"/>
+       <property name="message" value="Line has trailing spaces."/>
+    </module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="(if|for|while|catch)\(" />
+		<property name="message" value="Statement should have space between parenthesis" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*try\{" />
+		<property name="message" value="''try'' should have a space between curly brace" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*try\s*$" />
+		<property name="message" value="''try'' should have a curly brace on the same line" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*catch" />
+		<property name="message" value="Closing curly brace should be on the same line as catch" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="\)\{" />
+		<property name="message" value="Should be a space between parenthesis and curly brace" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="\>\{" />
+		<property name="message" value="Should be a space between angled bracket and curly brace" />
+	</module>
+
+	<!-- SOQL Formatting -->
+	<module name="RegexpSingleline">
+		<property name="format" value=".*\b((?!(?-i)select)(?i)SELECT)\b.*" />
+		<property name="message" value="SOQL operator ''select'' should be lowercase" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value=".*\b((?!(?-i)from)(?i)FROM)\b.*" />
+		<property name="message" value="SOQL operator ''from'' should be lowercase" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value=".*\b((?!(?-i)where)(?i)WHERE)\b.*" />
+		<property name="message" value="SOQL operator ''where'' should be lowercase" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value=".*\b((?!(?-i)and)(?i)AND)\b.*" />
+		<property name="message" value="SOQL operator ''and'' should be lowercase" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value=".*\b((?!(?-i)or)(?i)OR)\b.*" />
+		<property name="message" value="SOQL operator ''or'' should be lowercase" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value=".*\b((?!(?-i)limit)(?i)LIMIT)\b.*" />
+		<property name="message" value="SOQL operator ''limit'' should be lowercase" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value=".*\b((?!(?-i)group by)(?i)GROUP BY)\b.*" />
+		<property name="message" value="SOQL operator ''group by'' should be lowercase" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value=".*\b((?!(?-i)order by)(?i)ORDER BY)\b.*" />
+		<property name="message" value="SOQL operator ''order by'' should be lowercase" />
+	</module>
+
+	<!-- object name -->
+	<!-- List of types https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_primitives.htm -->
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Blob)(?i)blob)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Boolean)(?i)boolean)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Date)(?i)date)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Datetime)(?i)datetime)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Decimal)(?i)decimal)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Double)(?i)double)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Id)(?i)id)\b\s+(\w+)" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Long)(?i)long)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Object)(?i)object)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)String)(?i)string)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Time)(?i)time)\b.*" />
+		<property name="message" value="Primitive data types should have the initial character capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)sObject)(?i)sobject)\b.*" />
+		<property name="message" value="Data type should captialized as &quot;sObject&quot;" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="(public|private) (with|without) sharing class [a-z]" />
+		<property name="message" value="Class name should be capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="(public|private) class [a-z]" />
+		<property name="message" value="Class name should be capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+\bnew [a-z].*$" />
+		<property name="message" value="Class name should be capitalized" />
+	</module>
+
+	<module name="RegexpSingleline">
+		<property name="format" value="^\s*[^\*\/]+((?!(?-i)System)(?i)system)\..*" />
+		<property name="message" value="System class should be capitalized" />
+	</module>
+
+<!--
+
+	<module name="RegexpSingleline">
+		<property name="format" value="" />
+		<property name="message" value="" />
+	</module>
+-->
+<!-- System.assert, System.assertEquals, System.assertNotEquals($1, $2, $3) -->
+</module>

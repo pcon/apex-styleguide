@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% set page.title = "Home" %}
+{% set page.nav = "home" %}
+
+{% block content %}
+	<h1>Apex Styleguide</h1>
+	<p>This site is ment to be an example of our style and not ment to be the "end all be all" of Apex stylization.  The best advice I can give is to be consistant and stick with a style that works best for you</p>
+	<h2>Guide Usage</h2>
+	<p>This guide is broken up sections based on the type of code being used.  Where applicable <a href="http://checkstyle.sourceforge.net/">Checkstyle</a> references will be provided</p>
+	<h2>Checkstyle Usage</h2>
+	<ol>
+		<li>Download the most recent version of the <a href="https://sourceforge.net/projects/checkstyle/files/checkstyle/">checkstyle jar</a></li>
+		<li>Generate a <code>checkstyle.properties</code> file
+			<pre style="width: 300px; margin-top: 10px;" class="prettyprint">basedir=/path/to/src</pre>
+		</li>
+		<li>Download the most recent <code>apex_checks.xml</code> <a href="https://raw.githubusercontent.com/pcon/apex-styleguide/master/checkstyle/apex_checks.xml">file</a></li>
+		<li>Run checkstyle against a single file <code>java -jar checkstyle.jar -p checkstyle.properties -c apex_checks.xml /path/to/src/classes/MyClass.cls</code></li>
+	</ol>
+{% endblock %}
