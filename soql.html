@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><title>Home &raquo; Apex Styleguide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="author" content="Patrick Connelly"><link rel="stylesheet" href="styles/bootstrap.min.css"><link rel="stylesheet" href="styles/bootstrap-theme.min.css"><style>html{position:relative;min-height:100%}body{padding-top:50px;margin-bottom:60px}#footer{position:absolute;bottom:0;width:100%;height:70px;background-color:#f5f5f5;padding-top:10px}.sub-header{padding-bottom:10px;border-bottom:1px solid #eee}.navbar-fixed-top{border:0}.sidebar{display:none}@media (min-width:768px){.sidebar{position:fixed;top:51px;bottom:0;left:0;z-index:1000;display:block;padding:20px;overflow-x:hidden;overflow-y:auto;background-color:#f5f5f5;border-right:1px solid #eee}}.nav-sidebar{margin-right:-21px;margin-bottom:20px;margin-left:-20px}.nav-sidebar>li>a{padding-right:20px;padding-left:20px}.nav-sidebar>.active>a,.nav-sidebar>.active>a:hover,.nav-sidebar>.active>a:focus{color:#fff;background-color:#428bca}.main{padding:20px}@media (min-width:768px){.main{padding-right:40px;padding-left:40px}}.main .page-header{margin-top:0}.clearboth{clear:both}</style></head><body class="home"><div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="/">Apex Styleguide</a></div><div class="navbar-collapse collapse"></div></div></div><div class="container-fluid"><div class="row"><div class="col-sm-3 col-md-2 sidebar"><ul class="nav nav-sidebar"><li><a href="soql.html">SOQL</a></li></ul></div><div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"><h1>SOQL</h1><h2>Example</h2><div class="row"><div class="col-md-6"><h3>Basic SOQL</h3><pre style="margin-top:10px" class="prettyprint">select Field1__c,
+<!DOCTYPE html><html lang="en"><head><title>Home &raquo; Apex Styleguide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="author" content="Patrick Connelly"><link rel="stylesheet" href="styles/bootstrap.min.css"><link rel="stylesheet" href="styles/bootstrap-theme.min.css"><style>html{position:relative;min-height:100%}body{padding-top:50px;margin-bottom:60px}#footer{position:absolute;bottom:0;width:100%;height:70px;background-color:#f5f5f5;padding-top:10px}.sub-header{padding-bottom:10px;border-bottom:1px solid #eee}.navbar-fixed-top{border:0}.sidebar{display:none}@media (min-width:768px){.sidebar{position:fixed;top:51px;bottom:0;left:0;z-index:1000;display:block;padding:20px;overflow-x:hidden;overflow-y:auto;background-color:#f5f5f5;border-right:1px solid #eee}}.nav-sidebar{margin-right:-21px;margin-bottom:20px;margin-left:-20px}.nav-sidebar>li>a{padding-right:20px;padding-left:20px}.nav-sidebar>.active>a,.nav-sidebar>.active>a:hover,.nav-sidebar>.active>a:focus{color:#fff;background-color:#428bca}.main{padding:20px}@media (min-width:768px){.main{padding-right:40px;padding-left:40px}}.main .page-header{margin-top:0}.clearboth{clear:both}</style></head><body class="home"><div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="index.html">Apex Styleguide</a></div><div class="navbar-collapse collapse"></div></div></div><div class="container-fluid"><div class="row"><div class="col-sm-3 col-md-2 sidebar"><ul class="nav nav-sidebar"><li><a href="index.html">Home</a></li><li><a href="soql.html">SOQL</a></li></ul></div><div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"><h1>SOQL</h1><h2>Examples</h2><div class="row"><div class="col-md-6"><h3>Basic SOQL</h3><pre style="margin-top:10px" class="prettyprint">select Field1__c,
     Field2__c,
     Field3__c,
     Object__r.ChildField__c,
@@ -26,4 +26,44 @@ offset 10 </pre></div><div class="col-md-6"><h3>Aggregate SOQL</h3><pre style="m
 from MyObject__c
 where Field2__c &lt; 2
 group by Field3__c
-order by COUNT(Id)</pre></div></div><div class="row"></div></div></div></div><footer id="footer"><div class="container text-center"><p class="muted credit">Deployed via <a href="https://travis-ci.org/">Travis</a> using <a href="http://getbootstrap.com/">Bootstrap</a>.</p><p class="muted credit"><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p></div></footer><script src="scripts/jquery.min.js"></script><script src="scripts/bootstrap.min.js"></script><script src="scripts/run_prettify.js"></script><script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-31062468-1"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();</script></body></html>
+order by COUNT(Id)</pre></div></div><div class="row"><div class="col-md-12"><h2>Guidelines</h2><h3>Usage</h3><p>In general, SOQL should be declared inline using the square bracket notation. When not possible, dynamic SOQL should conform to the same naming and capitalization requirements</p><h3>Naming</h3><ul><li>Fields should be alphabetized appear in upper camelcase.</li><li>Related queries should appear after all member queries, also in alphabetical order.</li><li>Should a field contain special characters (for example underscore), those fields should in ascii order.</li></ul><h3>Spacing</h3><ul><li>Each field should be on it's own line.</li><li>The first field should be on the same line as the <code>select</code>.</li><li>Subsequent fields should be intented further in.</li><li>Parentheses should be on their own line</li><li>Where stanzas that are combined with a logical operator (and / or) should have the operator at the end of the line</li></ul><h3>Capitalization</h3><ul><li>Action words (<code>select</code>, <code>from</code>, <code>where</code>), logical operators (<code>and</code>, <code>or</code>) should be lowercased</li><li>Date functions (<code>DAY_IN_YEAR</code>, <code>CALENDAR_YEAR</code>), aggregate functions (<code>MAX</code>, <code>AVG</code>), or literals (<code>TODAY</code>) should be capitalized</li></ul><h2>Checkstyle Rules</h2><pre class="prettyprint">&lt;!-- SOQL actions --&gt;
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)select)(?i)SELECT)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''select'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)from)(?i)FROM)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''from'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)where)(?i)WHERE)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''where'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)limit)(?i)LIMIT)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''limit'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)group by)(?i)GROUP BY)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''group by'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)order by)(?i)ORDER BY)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''order by'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;!-- SOQL logical operators --&gt;
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)and)(?i)AND)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''and'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)or)(?i)OR)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''or'' should be lowercase" /&gt;
+&lt;/module&gt;</pre></div></div></div></div></div><footer id="footer"><div class="container text-center"><p class="muted credit">Deployed via <a href="https://travis-ci.org/">Travis</a> using <a href="http://getbootstrap.com/">Bootstrap</a>.</p><p class="muted credit"><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p></div></footer><script src="scripts/jquery.min.js"></script><script src="scripts/bootstrap.min.js"></script><script src="scripts/anchor.min.js"></script><script src="scripts/run_prettify.js"></script><script src="scripts/app.js"></script><script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-31062468-1"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();</script></body></html>
