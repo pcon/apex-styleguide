@@ -136,6 +136,34 @@ gulp.task('pages', ['cleanpages'], function () {
         .pipe(connect.reload());
 });
 
+gulp.task('cleanstyles', function () {
+    'use strict';
+
+    return gulp.src('dist/styles', {read: false})
+        .pipe(rimraf());
+});
+
+gulp.task('styles', ['cleanstyles'], function () {
+    'use strict';
+
+    return gulp.src('site/assets/styles/**')
+        .pipe(gulp.dest('dist/styles'));
+});
+
+gulp.task('cleanscripts', function () {
+    'use strict';
+
+    return gulp.src('dist/scripts', {read: false})
+        .pipe(rimraf());
+});
+
+gulp.task('scripts', ['cleanscripts'], function () {
+    'use strict';
+
+    return gulp.src('site/assets/scripts/**')
+        .pipe(gulp.dest('dist/scripts'));
+});
+
 gulp.task('clean', function () {
     'use strict';
 
@@ -144,7 +172,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('content', ['pages']);
-gulp.task('default', ['content']);
+gulp.task('default', ['content', 'styles', 'scripts']);
 
 gulp.task('watch', ['default'], function () {
     'use strict';
