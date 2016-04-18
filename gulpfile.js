@@ -49,7 +49,7 @@ var site = {
 };
 
 swig.setDefaults({
-    loader: swig.loaders.fs(__dirname + '/gh-pages/assets/templates'),
+    loader: swig.loaders.fs(__dirname + '/site/assets/templates'),
     cache: false
 });
 swigExtras.useFilter(swig, 'truncate');
@@ -89,7 +89,7 @@ gulp.task('pages', ['cleanpages'], function () {
     var html, markdown;
 
     /*jslint unparam: true*/
-    html = gulp.src(['gh-pages/content/pages/*.html'])
+    html = gulp.src(['site/content/pages/*.html'])
         .pipe(frontMatter({property: 'page', remove: true}))
         .pipe(through.obj(function (file, enc, cb) {
             var data, tpl;
@@ -113,10 +113,10 @@ gulp.task('pages', ['cleanpages'], function () {
         }));
     /*jslint unparam: false*/
 
-    markdown = gulp.src('gh-pages/content/pages/*.md')
+    markdown = gulp.src('site/content/pages/*.md')
         .pipe(frontMatter({property: 'page', remove: true}))
         .pipe(marked())
-        .pipe(applyTemplate('gh-pages/assets/templates/page.html'))
+        .pipe(applyTemplate('site/assets/templates/page.html'))
         .pipe(rename({extname: '.html'}));
 
     return merge(html, markdown)
@@ -149,13 +149,13 @@ gulp.task('default', ['content']);
 gulp.task('watch', ['default'], function () {
     'use strict';
 
-    gulp.watch(['gh-pages/assets/templates/**'], ['content']);
-    gulp.watch(['gh-pages/assets/styles/**'], ['styles']);
-    gulp.watch(['gh-pages/assets/images/**'], ['images']);
-    gulp.watch(['gh-pages/assets/fonts/**'], ['fonts']);
-    gulp.watch(['gh-pages/assets/extra/**'], ['extra']);
+    gulp.watch(['site/assets/templates/**'], ['content']);
+    gulp.watch(['site/assets/styles/**'], ['styles']);
+    gulp.watch(['site/assets/images/**'], ['images']);
+    gulp.watch(['site/assets/fonts/**'], ['fonts']);
+    gulp.watch(['site/assets/extra/**'], ['extra']);
 
-    gulp.watch(['gh-pages/content/pages/**'], ['pages']);
+    gulp.watch(['site/content/pages/**'], ['pages']);
 
     connect.server({
         root: ['dist'],
