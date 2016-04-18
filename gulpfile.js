@@ -143,38 +143,6 @@ gulp.task('clean', function () {
         .pipe(rimraf());
 });
 
-function scripts(watch) {
-    'use strict';
-
-    var bundler,
-        args = watch ? _.clone(watchify.args) : {};
-    args.debug = DEBUG;
-
-    bundler = browserify('./assets/scripts/app.js', args);
-
-    if (watch) {
-        bundler = watchify(bundler);
-    }
-
-    function rebundle() {
-        gutil.log('Bundling... ');
-
-        return bundler.bundle()
-            // log errors if they happen
-            .on('error', function (e) {
-                gutil.log('Browserify Error', e);
-            })
-            .pipe(source('app.js'))
-            .pipe(gulpif(!DEBUG, streamify(uglify())))
-            .pipe(gulp.dest('./dist/scripts'))
-            .pipe(connect.reload());
-    }
-
-    bundler.on('update', rebundle);
-    return rebundle();
-}
-
-
 gulp.task('content', ['pages']);
 gulp.task('default', ['content']);
 
@@ -187,10 +155,8 @@ gulp.task('watch', ['default'], function () {
     gulp.watch(['assets/fonts/**'], ['fonts']);
     gulp.watch(['assets/extra/**'], ['extra']);
 
-    gulp.watch(['content/pages/**', 'content/testimonials/**', 'content/services/**'], ['pages']);
+    gulp.watch(['content/pages/**'], ['pages']);
     gulp.watch(['content/posts/**'], ['posts', 'rss']);
-
-    scripts(true);
 
     connect.server({
         root: ['dist'],
@@ -199,11 +165,7 @@ gulp.task('watch', ['default'], function () {
     });
 });
 
-gulp.task('dist', ['default'], function () {
-    'use strict';
-
-    return scripts(false);
-});
+gulp.task('dist', ['default']);
 
 gulp.task('deploy', ['dist'], function () {
     'use strict';
