@@ -1,0 +1,15 @@
+<!-- class naming checks -->
+<module name="RegexpSingleline">
+	<property name="format" value="(public|private) (with|without) sharing class [a-z]" />
+	<property name="message" value="Class name should be capitalized" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="(public|private) class [a-z]" />
+	<property name="message" value="Class name should be capitalized" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="^\s*[^\*\/]+\bnew [a-z].*$" />
+	<property name="message" value="Class name should be capitalized" />
+</module>

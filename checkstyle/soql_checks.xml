@@ -1,0 +1,41 @@
+<!-- SOQL actions -->
+<module name="RegexpSingleline">
+	<property name="format" value=".*\b((?!(?-i)select)(?i)SELECT)\b.*" />
+	<property name="message" value="SOQL operator ''select'' should be lowercase" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value=".*\b((?!(?-i)from)(?i)FROM)\b.*" />
+	<property name="message" value="SOQL operator ''from'' should be lowercase" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value=".*\b((?!(?-i)where)(?i)WHERE)\b.*" />
+	<property name="message" value="SOQL operator ''where'' should be lowercase" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value=".*\b((?!(?-i)limit)(?i)LIMIT)\b.*" />
+	<property name="message" value="SOQL operator ''limit'' should be lowercase" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value=".*\b((?!(?-i)group by)(?i)GROUP BY)\b.*" />
+	<property name="message" value="SOQL operator ''group by'' should be lowercase" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value=".*\b((?!(?-i)order by)(?i)ORDER BY)\b.*" />
+	<property name="message" value="SOQL operator ''order by'' should be lowercase" />
+</module>
+
+<!-- SOQL logical operators -->
+<module name="RegexpSingleline">
+	<property name="format" value=".*\b((?!(?-i)and)(?i)AND)\b.*" />
+	<property name="message" value="SOQL operator ''and'' should be lowercase" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value=".*\b((?!(?-i)or)(?i)OR)\b.*" />
+	<property name="message" value="SOQL operator ''or'' should be lowercase" />
+</module>

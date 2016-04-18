@@ -17,6 +17,7 @@ var _ = require('underscore'),
     rename = require('gulp-rename'),
     rimraf = require('gulp-rimraf'),
     sass = require('gulp-sass'),
+    shell = require('gulp-shell'),
     source = require('vinyl-source-stream'),
     streamify = require('gulp-streamify'),
     uglify = require('gulp-uglify'),
@@ -214,3 +215,5 @@ gulp.task('deploy', ['dist'], function () {
     return gulp.src('./dist/**/*')
         .pipe(deploy());
 });
+
+gulp.task('checkstyle', shell.task(['xmllint --noent checkstyle/apex_checks.xml | xmllint --format - > apex_checks_combined.xml']));

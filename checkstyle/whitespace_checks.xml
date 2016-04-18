@@ -1,0 +1,65 @@
+<!-- General formatting -->
+<module name="RegexpSingleline">
+	<property name="format" value=",[^'\s]" />
+	<property name="message" value="There should be a space after a comma" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="[\s]," />
+	<property name="message" value="There should be no space before a comma" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="[^\+!=&gt;&lt; ]=" />
+	<property name="message" value="There should be a spaces surrounding equal signs" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="[^\+]\+[^\s$]" />
+	<property name="message" value="There should be a spaces surrounding plus signs" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="for \(.*\S:" />
+	<property name="message" value="There should be a spaces surrounding colons" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="for \(.*:\S" />
+	<property name="message" value="There should be a spaces surrounding colons" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="\s+$"/>
+	<property name="message" value="Line has trailing spaces."/>
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="(if|for|while|catch)\(" />
+	<property name="message" value="Statement should have space between parenthesis" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="^\s*try\{" />
+	<property name="message" value="''try'' should have a space between curly brace" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="^\s*try\s*$" />
+	<property name="message" value="''try'' should have a curly brace on the same line" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="^\s*catch" />
+	<property name="message" value="Closing curly brace should be on the same line as catch" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="\)\{" />
+	<property name="message" value="Should be a space between parenthesis and curly brace" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="\>\{" />
+	<property name="message" value="Should be a space between angled bracket and curly brace" />
+</module>
