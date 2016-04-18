@@ -150,6 +150,20 @@ gulp.task('styles', ['cleanstyles'], function () {
         .pipe(gulp.dest('dist/styles'));
 });
 
+gulp.task('cleanfonts', function () {
+    'use strict';
+
+    return gulp.src('dist/fonts', {read: false})
+        .pipe(rimraf());
+});
+
+gulp.task('fonts', ['cleanfonts'], function () {
+    'use strict';
+
+    return gulp.src('site/assets/fonts/**')
+        .pipe(gulp.dest('dist/fonts'));
+});
+
 gulp.task('cleanscripts', function () {
     'use strict';
 
@@ -172,7 +186,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('content', ['pages']);
-gulp.task('default', ['content', 'styles', 'scripts']);
+gulp.task('default', ['content', 'styles', 'scripts', 'fonts']);
 
 gulp.task('watch', ['default'], function () {
     'use strict';

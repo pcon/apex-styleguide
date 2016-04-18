@@ -4,7 +4,7 @@
 
 {% block content %}
 	<h1>SOQL</h1>
-	<h2>Example</h2>
+	<h2>Examples</h2>
 	<div class="row">
 		<div class="col-md-6">
 			<h3>Basic SOQL</h3>
@@ -44,5 +44,71 @@ order by COUNT(Id)</pre>
 		</div>
 	</div>
 	<div class="row">
+		<div class="col-md-12">
+			<h2>Guidelines</h2>
+			<h3>Usage</h3>
+			<p>In general, SOQL should be declared inline using the square bracket notation.  When not possible, dynamic SOQL should conform to the same naming and capitalization requirements</p>
+			<h3>Naming</h3>
+			<ul>
+				<li>Fields should be alphabetized appear in upper camelcase.</li>
+				<li>Related queries should appear after all member queries, also in alphabetical order.</li>
+				<li>Should a field contain special characters (for example underscore), those fields should in ascii order.</li>
+			</ul>
+			<h3>Spacing</h3>
+			<ul>
+				<li>Each field should be on it's own line.</li>
+				<li>The first field should be on the same line as the <code>select</code>.</li>
+				<li>Subsequent fields should be intented further in.</li>
+				<li>Parentheses should be on their own line</li>
+				<li>Where stanzas that are combined with a logical operator (and / or) should have the operator at the end of the line</li>
+			</ul>
+			<h3>Capitalization</h3>
+			<ul>
+				<li>Action words (<code>select</code>, <code>from</code>, <code>where</code>), logical operators (<code>and</code>, <code>or</code>) should be lowercased</li>
+				<li>Date functions (<code>DAY_IN_YEAR</code>, <code>CALENDAR_YEAR</code>), aggregate functions (<code>MAX</code>, <code>AVG</code>), or literals (<code>TODAY</code>) should be capitalized</li>
+			</ul>
+			<h2>Checkstyle Rules</h2>
+			<pre class="prettyprint">&lt;!-- SOQL actions --&gt;
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)select)(?i)SELECT)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''select'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)from)(?i)FROM)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''from'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)where)(?i)WHERE)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''where'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)limit)(?i)LIMIT)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''limit'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)group by)(?i)GROUP BY)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''group by'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)order by)(?i)ORDER BY)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''order by'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;!-- SOQL logical operators --&gt;
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)and)(?i)AND)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''and'' should be lowercase" /&gt;
+&lt;/module&gt;
+
+&lt;module name="RegexpSingleline"&gt;
+	&lt;property name="format" value=".*\b((?!(?-i)or)(?i)OR)\b.*" /&gt;
+	&lt;property name="message" value="SOQL operator ''or'' should be lowercase" /&gt;
+&lt;/module&gt;</pre>
+		</div>
 	</div>
 {% endblock %}
