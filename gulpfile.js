@@ -2,10 +2,12 @@
 /*global require */
 
 var _ = require('underscore'),
+    fs = require('fs'),
     argv = require('yargs').argv,
     browserify = require('browserify'),
     connect = require('gulp-connect'),
     deploy = require('gulp-gh-pages'),
+    esc = require('escape-html'),
     frontMatter = require('gulp-front-matter'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
@@ -77,6 +79,25 @@ function applyTemplate(templateFile) {
 }
 /*jslint unparam: false*/
 
+function loadCheckstyle(file_name) {
+    'use strict';
+
+    var content,
+        file = path.join(__dirname, '/checkstyle/', file_name);
+
+    try {
+        /*jslint stupid: true*/
+        fs.accessSync(file, fs.R_OK);
+        content = fs.readFileSync(file);
+        /*jslint stupid: false*/
+    } catch (err) {
+        return esc('<!-- ERROR missing "' + file_name + '" -->');
+    }
+
+    return esc(content);
+}
+
+
 gulp.task('cleanpages', function () {
     'use strict';
 
@@ -104,7 +125,8 @@ gulp.task('pages', ['cleanpages'], function () {
             data = {
                 site: site,
                 page: file.page,
-                file: file
+                file: file,
+                load_checkstyle: loadCheckstyle
             };
 
             tpl = swig.compileFile(file.path);

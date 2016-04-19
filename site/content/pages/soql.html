@@ -68,47 +68,7 @@ order by COUNT(Id)</pre>
 				<li>Date functions (<code>DAY_IN_YEAR</code>, <code>CALENDAR_YEAR</code>), aggregate functions (<code>MAX</code>, <code>AVG</code>), or literals (<code>TODAY</code>) should be capitalized</li>
 			</ul>
 			<h2>Checkstyle Rules</h2>
-			<pre class="prettyprint">&lt;!-- SOQL actions --&gt;
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)select)(?i)SELECT)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''select'' should be lowercase" /&gt;
-&lt;/module&gt;
-
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)from)(?i)FROM)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''from'' should be lowercase" /&gt;
-&lt;/module&gt;
-
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)where)(?i)WHERE)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''where'' should be lowercase" /&gt;
-&lt;/module&gt;
-
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)limit)(?i)LIMIT)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''limit'' should be lowercase" /&gt;
-&lt;/module&gt;
-
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)group by)(?i)GROUP BY)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''group by'' should be lowercase" /&gt;
-&lt;/module&gt;
-
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)order by)(?i)ORDER BY)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''order by'' should be lowercase" /&gt;
-&lt;/module&gt;
-
-&lt;!-- SOQL logical operators --&gt;
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)and)(?i)AND)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''and'' should be lowercase" /&gt;
-&lt;/module&gt;
-
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)or)(?i)OR)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''or'' should be lowercase" /&gt;
-&lt;/module&gt;</pre>
+			<pre class="prettyprint xml">{{load_checkstyle("soql_checks.xml") | escape }}</pre>
 		</div>
 	</div>
 {% endblock %}
