@@ -12,6 +12,7 @@
     "devDependencies": {
         "browserify": "^6.2.0",
         "es6-browserify": "0.0.7",
+        "escape-html": "^1.0.3",
         "font-awesome": "^4.3.0",
         "global": "^4.3.0",
         "gulp": "^3.8.10",
