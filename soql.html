@@ -26,44 +26,44 @@ offset 10 </pre></div><div class="col-md-6"><h3>Aggregate SOQL</h3><pre style="m
 from MyObject__c
 where Field2__c &lt; 2
 group by Field3__c
-order by COUNT(Id)</pre></div></div><div class="row"><div class="col-md-12"><h2>Guidelines</h2><h3>Usage</h3><p>In general, SOQL should be declared inline using the square bracket notation. When not possible, dynamic SOQL should conform to the same naming and capitalization requirements</p><h3>Naming</h3><ul><li>Fields should be alphabetized appear in upper camelcase.</li><li>Related queries should appear after all member queries, also in alphabetical order.</li><li>Should a field contain special characters (for example underscore), those fields should in ascii order.</li></ul><h3>Spacing</h3><ul><li>Each field should be on it's own line.</li><li>The first field should be on the same line as the <code>select</code>.</li><li>Subsequent fields should be intented further in.</li><li>Parentheses should be on their own line</li><li>Where stanzas that are combined with a logical operator (and / or) should have the operator at the end of the line</li></ul><h3>Capitalization</h3><ul><li>Action words (<code>select</code>, <code>from</code>, <code>where</code>), logical operators (<code>and</code>, <code>or</code>) should be lowercased</li><li>Date functions (<code>DAY_IN_YEAR</code>, <code>CALENDAR_YEAR</code>), aggregate functions (<code>MAX</code>, <code>AVG</code>), or literals (<code>TODAY</code>) should be capitalized</li></ul><h2>Checkstyle Rules</h2><pre class="prettyprint">&lt;!-- SOQL actions --&gt;
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)select)(?i)SELECT)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''select'' should be lowercase" /&gt;
+order by COUNT(Id)</pre></div></div><div class="row"><div class="col-md-12"><h2>Guidelines</h2><h3>Usage</h3><p>In general, SOQL should be declared inline using the square bracket notation. When not possible, dynamic SOQL should conform to the same naming and capitalization requirements</p><h3>Naming</h3><ul><li>Fields should be alphabetized appear in upper camelcase.</li><li>Related queries should appear after all member queries, also in alphabetical order.</li><li>Should a field contain special characters (for example underscore), those fields should in ascii order.</li></ul><h3>Spacing</h3><ul><li>Each field should be on it's own line.</li><li>The first field should be on the same line as the <code>select</code>.</li><li>Subsequent fields should be intented further in.</li><li>Parentheses should be on their own line</li><li>Where stanzas that are combined with a logical operator (and / or) should have the operator at the end of the line</li></ul><h3>Capitalization</h3><ul><li>Action words (<code>select</code>, <code>from</code>, <code>where</code>), logical operators (<code>and</code>, <code>or</code>) should be lowercased</li><li>Date functions (<code>DAY_IN_YEAR</code>, <code>CALENDAR_YEAR</code>), aggregate functions (<code>MAX</code>, <code>AVG</code>), or literals (<code>TODAY</code>) should be capitalized</li></ul><h2>Checkstyle Rules</h2><pre class="prettyprint xml">&lt;!-- SOQL actions --&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;.*\b((?!(?-i)select)(?i)SELECT)\b.*&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;SOQL operator &#39;&#39;select&#39;&#39; should be lowercase&quot; /&gt;
 &lt;/module&gt;
 
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)from)(?i)FROM)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''from'' should be lowercase" /&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;.*\b((?!(?-i)from)(?i)FROM)\b.*&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;SOQL operator &#39;&#39;from&#39;&#39; should be lowercase&quot; /&gt;
 &lt;/module&gt;
 
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)where)(?i)WHERE)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''where'' should be lowercase" /&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;.*\b((?!(?-i)where)(?i)WHERE)\b.*&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;SOQL operator &#39;&#39;where&#39;&#39; should be lowercase&quot; /&gt;
 &lt;/module&gt;
 
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)limit)(?i)LIMIT)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''limit'' should be lowercase" /&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;.*\b((?!(?-i)limit)(?i)LIMIT)\b.*&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;SOQL operator &#39;&#39;limit&#39;&#39; should be lowercase&quot; /&gt;
 &lt;/module&gt;
 
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)group by)(?i)GROUP BY)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''group by'' should be lowercase" /&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;.*\b((?!(?-i)group by)(?i)GROUP BY)\b.*&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;SOQL operator &#39;&#39;group by&#39;&#39; should be lowercase&quot; /&gt;
 &lt;/module&gt;
 
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)order by)(?i)ORDER BY)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''order by'' should be lowercase" /&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;.*\b((?!(?-i)order by)(?i)ORDER BY)\b.*&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;SOQL operator &#39;&#39;order by&#39;&#39; should be lowercase&quot; /&gt;
 &lt;/module&gt;
 
 &lt;!-- SOQL logical operators --&gt;
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)and)(?i)AND)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''and'' should be lowercase" /&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;.*\b((?!(?-i)and)(?i)AND)\b.*&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;SOQL operator &#39;&#39;and&#39;&#39; should be lowercase&quot; /&gt;
 &lt;/module&gt;
 
-&lt;module name="RegexpSingleline"&gt;
-	&lt;property name="format" value=".*\b((?!(?-i)or)(?i)OR)\b.*" /&gt;
-	&lt;property name="message" value="SOQL operator ''or'' should be lowercase" /&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;.*\b((?!(?-i)or)(?i)OR)\b.*&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;SOQL operator &#39;&#39;or&#39;&#39; should be lowercase&quot; /&gt;
 &lt;/module&gt;</pre></div></div></div></div></div><footer id="footer"><div class="container text-center"><p class="muted credit">Deployed via <a href="https://travis-ci.org/">Travis</a> using <a href="http://getbootstrap.com/">Bootstrap</a>.</p><p class="muted credit"><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p></div></footer><script src="scripts/jquery.min.js"></script><script src="scripts/bootstrap.min.js"></script><script src="scripts/anchor.min.js"></script><script src="scripts/run_prettify.js"></script><script src="scripts/app.js"></script><script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-31062468-1"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();</script></body></html>
