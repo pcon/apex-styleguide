@@ -15,7 +15,7 @@
 </module>
 
 <module name="RegexpSingleline">
-	<property name="format" value="[^\+]\+[^\s$]" />
+	<property name="format" value="[^\+]\+[^\s\+=$]" />
 	<property name="message" value="There should be a spaces surrounding plus signs" />
 </module>
 
