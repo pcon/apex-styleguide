@@ -1,62 +1,76 @@
 <!-- object name -->
-<!-- List of types https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_primitives.htm -->
+<!-- List of type &quot;&quot; https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_primitives.htm -->
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Blob)(?i)blob)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Blob&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Boolean)(?i)boolean)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Boolean&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Date)(?i)date)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Date&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Datetime)(?i)datetime)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Datetime&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Decimal)(?i)decimal)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Decimal&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Double)(?i)double)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Double&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Id)(?i)id)\b\s+(\w+)" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Id&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Long)(?i)long)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Long&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Object)(?i)object)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Object&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)String)(?i)string)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;String&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Time)(?i)time)\b.*" />
-	<property name="message" value="Primitive data types should have the initial character capitalized" />
+	<property name="message" value="Primitive data type &quot;Time&quot; should have the initial character capitalized" />
 </module>
 
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\b((?!(?-i)sObject)(?i)sobject)\b.*" />
-	<property name="message" value="Data type should captialized as &quot;sObject&quot;" />
+	<property name="message" value="Data type should capitalized as &quot;sObject&quot;" />
 </module>
 
+<module name="RegexpSingleline">
+	<property name="format" value="\sset&lt;" />
+	<property name="message" value="Data type &quot;Set&quot; should capitalized" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="\smap&lt;" />
+	<property name="message" value="Data type &quot;Map&quot; should capitalized" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="\slist&lt;" />
+	<property name="message" value="Data type &quot;List&quot; should captalized" />
+</module>

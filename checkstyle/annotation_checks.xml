@@ -1,0 +1,81 @@
+<!-- annotations -->
+<!-- List of annotations https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation.htm -->
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)AuraEnabled)(?i)auraenabled)" />
+	<property name="message" value="Annotation should be capitalized as &quot;AuraEnabled&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)Deprecated)(?i)deprecated)" />
+	<property name="message" value="Annotation should be capitalized as &quot;Deprecated&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)Future)(?i)future)" />
+	<property name="message" value="Annotation should be capitalized as &quot;Future&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)InvocableMethod)(?i)invocablemethod)" />
+	<property name="message" value="Annotation should be capitalized as &quot;InvocableMethod&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)InvocableVariable)(?i)invocablevariable)" />
+	<property name="message" value="Annotation should be capitalized as &quot;InvocableVariable&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)IsTest)(?i)istest)" />
+	<property name="message" value="Annotation should be capitalized as &quot;IsTest&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)ReadOnly)(?i)readonly)" />
+	<property name="message" value="Annotation should be capitalized as &quot;ReadOnly&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)RemoteAction)(?i)remoteaction)" />
+	<property name="message" value="Annotation should be capitalized as &quot;RemoteAction&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)TestSetup)(?i)testsetup)" />
+	<property name="message" value="Annotation should be capitalized as &quot;TestSetup&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)TestVisible)(?i)testvisible)" />
+	<property name="message" value="Annotation should be capitalized as &quot;TestVisible&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)RestResource)(?i)restresource)" />
+	<property name="message" value="Annotation should be capitalized as &quot;RestResource&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)HttpDelete)(?i)httpdelete)" />
+	<property name="message" value="Annotation should be capitalized as &quot;HttpDelete&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)HttpGet)(?i)httpget)" />
+	<property name="message" value="Annotation should be capitalized as &quot;HttpGet&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)HttpPatch)(?i)httppatch)" />
+	<property name="message" value="Annotation should be capitalized as &quot;HttpPatch&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)HttpPost)(?i)httppost)" />
+	<property name="message" value="Annotation should be capitalized as &quot;HttpPost&quot;" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="@((?!(?-i)HttpPut)(?i)httpput)" />
+	<property name="message" value="Annotation should be capitalized as &quot;HttpPut&quot;" />
+</module>

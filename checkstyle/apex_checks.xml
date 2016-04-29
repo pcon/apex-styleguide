@@ -6,6 +6,7 @@
           <!ENTITY soql SYSTEM "soql_checks.xml" >
           <!ENTITY objnames SYSTEM "objectname_checks.xml" >
           <!ENTITY classnames SYSTEM "class_checks.xml" >
+          <!ENTITY annotations SYSTEM "annotation_checks.xml" >
 ]>
 
 <module name="Checker">
@@ -15,6 +16,7 @@
 	&whitespace;
 	&soql;
 	&objnames;
+	&annotations;
 	&classnames;
 
 	<module name="RegexpSingleline">

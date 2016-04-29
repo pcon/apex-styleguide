@@ -15,8 +15,18 @@
 </module>
 
 <module name="RegexpSingleline">
-	<property name="format" value="[^\+]\+[^\s\+=$]" />
+	<property name="format" value="^\s*[^\*\/]+[^\+]\+[^\s\+=$]" />
 	<property name="message" value="There should be a spaces surrounding plus signs" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="^\s*[^\*\/]+[^\-]\-[^\s\-=\d\($]" />
+	<property name="message" value="There should be a spaces surrounding minus signs" />
+</module>
+
+<module name="RegexpSingleline">
+	<property name="format" value="!\s" />
+	<property name="message" value="The exclamation mark should be attached to another character" />
 </module>
 
 <module name="RegexpSingleline">
