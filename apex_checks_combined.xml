@@ -19,7 +19,7 @@
     <property name="message" value="There should be no space before a comma"/>
   </module>
   <module name="RegexpSingleline">
-    <property name="format" value="[^\+!=&gt;&lt; ]="/>
+    <property name="format" value="[^\+!=&gt;&lt; ]=[^&gt;]"/>
     <property name="message" value="There should be a spaces surrounding equal signs"/>
   </module>
   <module name="RegexpSingleline">
@@ -27,11 +27,11 @@
     <property name="message" value="There should be a spaces surrounding plus signs"/>
   </module>
   <module name="RegexpSingleline">
-    <property name="format" value="^\s*[^\*\/]+[^\-]\-[^\s\-=\d\($]"/>
+    <property name="format" value="^\s*[^\*\/]+[^\-']\-[^\s\-=\d\('$]"/>
     <property name="message" value="There should be a spaces surrounding minus signs"/>
   </module>
   <module name="RegexpSingleline">
-    <property name="format" value="!\s"/>
+    <property name="format" value="^\s*[^\*\/]+!\s"/>
     <property name="message" value="The exclamation mark should be attached to another character"/>
   </module>
   <module name="RegexpSingleline">
@@ -115,7 +115,7 @@
     <property name="message" value="Primitive data type &quot;Boolean&quot; should have the initial character capitalized"/>
   </module>
   <module name="RegexpSingleline">
-    <property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Date)(?i)date)\b.*"/>
+    <property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Date)(?i)date)\b[^\(].*"/>
     <property name="message" value="Primitive data type &quot;Date&quot; should have the initial character capitalized"/>
   </module>
   <module name="RegexpSingleline">
@@ -137,6 +137,10 @@
   <module name="RegexpSingleline">
     <property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Long)(?i)long)\b.*"/>
     <property name="message" value="Primitive data type &quot;Long&quot; should have the initial character capitalized"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Integer)(?i)integer)\b.*"/>
+    <property name="message" value="Primitive data type &quot;Integer&quot; should have the initial character capitalized"/>
   </module>
   <module name="RegexpSingleline">
     <property name="format" value="^\s*[^\*\/]+\b((?!(?-i)Object)(?i)object)\b.*"/>
