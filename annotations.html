@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head><title>Home &raquo; Apex Styleguide</title><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="author" content="Patrick Connelly"><link rel="stylesheet" href="styles/bootstrap.min.css"><link rel="stylesheet" href="styles/bootstrap-theme.min.css"><style>html{position:relative;min-height:100%}body{padding-top:50px;margin-bottom:60px}#footer{position:absolute;bottom:0;width:100%;height:70px;background-color:#f5f5f5;padding-top:10px}.sub-header{padding-bottom:10px;border-bottom:1px solid #eee}.navbar-fixed-top{border:0}.sidebar{display:none}@media (min-width:768px){.sidebar{position:fixed;top:51px;bottom:0;left:0;z-index:1000;display:block;padding:20px;overflow-x:hidden;overflow-y:auto;background-color:#f5f5f5;border-right:1px solid #eee}}.nav-sidebar{margin-right:-21px;margin-bottom:20px;margin-left:-20px}.nav-sidebar>li>a{padding-right:20px;padding-left:20px}.nav-sidebar>.active>a,.nav-sidebar>.active>a:hover,.nav-sidebar>.active>a:focus{color:#fff;background-color:#428bca}.main{padding:20px}@media (min-width:768px){.main{padding-right:40px;padding-left:40px}}.main .page-header{margin-top:0}.clearboth{clear:both}</style></head><body class="home"><div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="index.html">Apex Styleguide</a></div><div class="navbar-collapse collapse"></div></div></div><div class="container-fluid"><div class="row"><div class="col-sm-3 col-md-2 sidebar"><ul class="nav nav-sidebar"><li><a href="index.html">Home</a></li><li><a href="annotations.html">Annotations</a></li><li><a href="soql.html">SOQL</a></li></ul></div><div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"><h1>Annotations</h1><div class="row"><div class="col-md-12"><h2>Guidelines</h2><h3>Spacing</h3><ul><li>All annotations should be on their own line</li><li><code>@TestVisible</code> is the rare exception<ul><li>When making a variable visible, <code>@TestVisible</code> should be inline with the variable declaration<pre class="prettyprint java" style="max-width:600px">@TestVisible private String myString = 'hello world';</pre></li><li>When making a method visible, <code>@TestVisible</code> should be on the line prior to the declaration by itself<pre class="prettyprint java" style="max-width:600px">@TestVisible
+private void myMethod() {
+    // Do something
+}</pre></li></ul></li></ul><h3>Capitalization</h3><ul><li>As exampled in the <a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation.htm">documentation</a> the first letter of each word should be capitalized.</li></ul><h2>Checkstyle Rules</h2><pre class="prettyprint xml">&lt;!-- annotations --&gt;
+&lt;!-- List of annotations https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation.htm --&gt;
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)AuraEnabled)(?i)auraenabled)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;AuraEnabled&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)Deprecated)(?i)deprecated)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;Deprecated&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)Future)(?i)future)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;Future&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)InvocableMethod)(?i)invocablemethod)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;InvocableMethod&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)InvocableVariable)(?i)invocablevariable)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;InvocableVariable&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)IsTest)(?i)istest)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;IsTest&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)ReadOnly)(?i)readonly)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;ReadOnly&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)RemoteAction)(?i)remoteaction)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;RemoteAction&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)TestSetup)(?i)testsetup)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;TestSetup&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)TestVisible)(?i)testvisible)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;TestVisible&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)RestResource)(?i)restresource)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;RestResource&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)HttpDelete)(?i)httpdelete)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;HttpDelete&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)HttpGet)(?i)httpget)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;HttpGet&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)HttpPatch)(?i)httppatch)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;HttpPatch&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)HttpPost)(?i)httppost)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;HttpPost&amp;quot;&quot; /&gt;
+&lt;/module&gt;
+
+&lt;module name=&quot;RegexpSingleline&quot;&gt;
+	&lt;property name=&quot;format&quot; value=&quot;@((?!(?-i)HttpPut)(?i)httpput)&quot; /&gt;
+	&lt;property name=&quot;message&quot; value=&quot;Annotation should be capitalized as &amp;quot;HttpPut&amp;quot;&quot; /&gt;
+&lt;/module&gt;</pre></div></div></div></div></div><footer id="footer"><div class="container text-center"><p class="muted credit">Deployed via <a href="https://travis-ci.org/">Travis</a> using <a href="http://getbootstrap.com/">Bootstrap</a>.</p><p class="muted credit"><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p></div></footer><script src="scripts/jquery.min.js"></script><script src="scripts/bootstrap.min.js"></script><script src="scripts/anchor.min.js"></script><script src="scripts/run_prettify.js"></script><script src="scripts/app.js"></script><script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-31062468-1"]),_gaq.push(["_trackPageview"]),function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}();</script></body></html>
