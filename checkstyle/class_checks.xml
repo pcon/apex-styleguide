@@ -9,7 +9,9 @@
 	<property name="message" value="Class name should be capitalized" />
 </module>
 
+<!-- Removing temporarily until it can be resolved only outside of quotes
 <module name="RegexpSingleline">
 	<property name="format" value="^\s*[^\*\/]+\bnew [a-z].*$" />
 	<property name="message" value="Class name should be capitalized" />
 </module>
+-->
