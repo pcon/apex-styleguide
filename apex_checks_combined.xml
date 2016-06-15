@@ -19,8 +19,40 @@
     <property name="message" value="There should be no space before a comma"/>
   </module>
   <module name="RegexpSingleline">
-    <property name="format" value="[^\+!=&gt;&lt; ]=[^&gt;]"/>
+    <property name="format" value="[^\+\*\-/!=&gt;&lt; ]=[^&gt;]"/>
     <property name="message" value="There should be a spaces surrounding equal signs"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="\*=[^ ]"/>
+    <property name="message" value="There should be a spaces surrounding multiplication equal signs"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="[^ ]\*="/>
+    <property name="message" value="There should be a spaces surrounding multiplication equal signs"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="\+=[^ ]"/>
+    <property name="message" value="There should be a spaces surrounding plus equal signs"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="[^ ]\+="/>
+    <property name="message" value="There should be a spaces surrounding plus equal signs"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="\-=[^ ]"/>
+    <property name="message" value="There should be a spaces surrounding minus equal signs"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="[^ ]\-="/>
+    <property name="message" value="There should be a spaces surrounding minus equal signs"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="/=[^ ]"/>
+    <property name="message" value="There should be a spaces surrounding minus equal signs"/>
+  </module>
+  <module name="RegexpSingleline">
+    <property name="format" value="[^ ]/="/>
+    <property name="message" value="There should be a spaces surrounding minus equal signs"/>
   </module>
   <module name="RegexpSingleline">
     <property name="format" value="^\s*[^\*\/]+[^\+]\+[^\s\+=$]"/>
